@@ -1,0 +1,23 @@
+# Залежності
+node_modules/
+
+# Збірка
+dist/
+build/
+
+# Логи
+*.log
+npm-debug.log*
+
+# Службові файли ОС
+.DS_Store
+Thumbs.db
+
+# Налаштування редакторів
+.idea/
+.vscode/
+*.swp
+
+# Локальні змінні оточення
+.env
+.env.local
