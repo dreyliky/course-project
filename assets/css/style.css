@@ -69,6 +69,22 @@ h2 {
     text-decoration: none;
 }
 
+/* Секції */
+
+section {
+    padding-bottom: 30px;
+}
+
+section li {
+    margin-bottom: 6px;
+}
+
+.status {
+    margin-left: 6px;
+    color: var(--color-accent);
+    font-size: 14px;
+}
+
 /* Підвал */
 
 .footer {
