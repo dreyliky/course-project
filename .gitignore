@@ -21,3 +21,6 @@ Thumbs.db
 # Локальні змінні оточення
 .env
 .env.local
+
+# Налаштування Claude Code
+.claude/
