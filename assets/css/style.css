@@ -1,4 +1,4 @@
-/* Стилі стартової сторінки курсового проєкту. */
+/* Стилі сторінок курсового проєкту. */
 
 :root {
     --color-text: #222222;
@@ -42,7 +42,9 @@ h2 {
 }
 
 .header__name {
+    color: var(--color-text);
     font-weight: bold;
+    text-decoration: none;
 }
 
 .nav a {

@@ -3,18 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Курсовий проєкт з вебтехнологій: стартова сторінка, структура репозиторію та план розвитку.">
+    <meta name="description" content="Курсовий проєкт з вебтехнологій: стартова сторінка з описом поточного стану роботи.">
     <title>Курсовий проєкт</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header class="header">
-        <span class="header__name">Курсовий проєкт</span>
+        <a class="header__name" href="index.html">Курсовий проєкт</a>
 
-        <nav class="nav">
-            <a href="#about">Про проєкт</a>
-            <a href="#roadmap">План розвитку</a>
-            <a href="#tech">Технології</a>
+        <nav class="nav" aria-label="Основна навігація">
+            <a href="index.html">Головна</a>
+            <a href="about.html">Про проєкт</a>
         </nav>
     </header>
 
@@ -23,46 +22,20 @@
             <h1>Курсовий проєкт з вебтехнологій</h1>
             <p>
                 Репозиторій, у якому крок за кроком збирається навчальний вебпроєкт.
-                На цьому етапі налаштовано середовище розробки, закладено структуру
-                каталогів і опубліковано першу сторінку через GitHub Pages.
+                Кожна лабораторна робота додає до нього нову частину, не переписуючи
+                того, що вже зроблено.
             </p>
-            <a class="button" href="https://github.com/dreyliky/course-project">Репозиторій на GitHub</a>
+            <a class="button" href="about.html">Детальніше про проєкт</a>
         </section>
 
-        <section id="about">
-            <h2>Про проєкт</h2>
-            <p>Що зроблено на етапі налаштування середовища:</p>
+        <section>
+            <h2>Поточний стан</h2>
+            <p>Що вже є в проєкті:</p>
 
             <ul>
-                <li>встановлено й налаштовано Git та редактор коду;</li>
-                <li>створено репозиторій на GitHub і зв'язано його з локальним;</li>
-                <li>закладено структуру каталогів для розмітки, стилів і звітів;</li>
-                <li>опубліковано стартову сторінку через GitHub Pages.</li>
-            </ul>
-        </section>
-
-        <section id="roadmap">
-            <h2>План розвитку</h2>
-            <p>Етапи, через які проєкт проходитиме протягом курсу:</p>
-
-            <ol>
-                <li>Середовище і перша сторінка <span class="status">виконано</span></li>
-                <li>Семантична та адаптивна верстка</li>
-                <li>Інтерактивність на JavaScript</li>
-                <li>Робота з формами та даними</li>
-                <li>Збірка та оптимізація</li>
-            </ol>
-        </section>
-
-        <section id="tech">
-            <h2>Технології</h2>
-
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Git та GitHub</li>
-                <li>GitHub Pages</li>
-                <li>Visual Studio Code</li>
+                <li>налаштовано середовище розробки та репозиторій на GitHub;</li>
+                <li>сторінки побудовано на семантичних тегах розмітки;</li>
+                <li>сторінки можна пройти з клавіатури, без миші.</li>
             </ul>
         </section>
     </main>
