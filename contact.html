@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Форма зворотного зв'язку курсового проєкту з перевіркою заповнення на боці браузера.">
+    <title>Зворотний зв'язок — Курсовий проєкт</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a class="header__name" href="index.html">Курсовий проєкт</a>
+
+        <nav class="nav" aria-label="Основна навігація">
+            <a href="index.html">Головна</a>
+            <a href="about.html">Про проєкт</a>
+            <a href="contact.html">Зворотний зв'язок</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Зворотний зв'язок</h1>
+        <p>
+            Заповніть форму, щоб надіслати запитання або зауваження щодо проєкту.
+        </p>
+
+        <form class="form" action="#" method="post">
+            <fieldset>
+                <legend>Контактні дані</legend>
+
+                <p class="field">
+                    <label for="name">Ім'я</label>
+                    <input id="name" name="name" type="text" autocomplete="name">
+                </p>
+
+                <p class="field">
+                    <label for="email">Електронна пошта</label>
+                    <input id="email" name="email" type="email" autocomplete="email">
+                </p>
+
+                <p class="field">
+                    <label for="phone">Телефон</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel">
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Повідомлення</legend>
+
+                <p class="field">
+                    <label for="topic">Тема</label>
+                    <select id="topic" name="topic">
+                        <option value="">Оберіть тему зі списку</option>
+                        <option value="question">Запитання щодо проєкту</option>
+                        <option value="issue">Повідомити про помилку</option>
+                        <option value="offer">Пропозиція</option>
+                        <option value="other">Інше</option>
+                    </select>
+                </p>
+
+                <p class="field">
+                    <label for="message">Текст повідомлення</label>
+                    <textarea id="message" name="message" rows="6"></textarea>
+                </p>
+            </fieldset>
+
+            <p class="field field--checkbox">
+                <input id="consent" name="consent" type="checkbox">
+                <label for="consent">
+                    Погоджуюсь на обробку надісланих даних
+                </label>
+            </p>
+
+            <button class="button" type="submit">Надіслати повідомлення</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>Навчальний проєкт, 2026</p>
+    </footer>
+</body>
+</html>
