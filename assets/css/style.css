@@ -4,6 +4,7 @@
     --color-text: #222222;
     --color-muted: #666666;
     --color-accent: #2f5bd0;
+    --color-error: #c0392b;
     --color-border: #dddddd;
     --color-bg: #ffffff;
 }
@@ -66,9 +67,13 @@ h2 {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: var(--color-accent);
+    border: none;
     border-radius: 4px;
     color: var(--color-bg);
+    font-family: inherit;
+    font-size: 16px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* Секції */
@@ -85,6 +90,78 @@ section li {
     margin-left: 6px;
     color: var(--color-accent);
     font-size: 14px;
+}
+
+/* Форма */
+
+.form {
+    max-width: 520px;
+}
+
+.form fieldset {
+    margin: 0 0 20px;
+    padding: 15px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}
+
+.form legend {
+    padding: 0 6px;
+    font-weight: bold;
+}
+
+.field {
+    margin: 0 0 15px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.field textarea {
+    resize: vertical;
+}
+
+.hint {
+    display: block;
+    margin-top: 4px;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.required {
+    color: var(--color-error);
+}
+
+/* Поле підсвічується лише після того, як користувач його заповнював */
+.field :user-invalid {
+    border-color: var(--color-error);
+}
+
+.field--checkbox {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.field--checkbox input {
+    width: auto;
+}
+
+.field--checkbox label {
+    margin-bottom: 0;
 }
 
 /* Підвал */
@@ -115,6 +192,7 @@ section li {
 
     .button {
         display: block;
+        width: 100%;
         text-align: center;
     }
 }
