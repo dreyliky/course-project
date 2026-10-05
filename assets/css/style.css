@@ -7,12 +7,16 @@
     --color-error: #c0392b;
     --color-border: #dddddd;
     --color-bg: #ffffff;
+
+    --page-width: 1040px;
+    --sidebar-width: 260px;
+    --gap: 20px;
 }
 
+/* Базові стилі */
+
 body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0;
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: Arial, Helvetica, sans-serif;
@@ -29,6 +33,10 @@ h1 {
 
 h2 {
     font-size: 22px;
+}
+
+h3 {
+    font-size: 17px;
 }
 
 /* Доступність */
@@ -49,14 +57,27 @@ h2 {
     outline-offset: 2px;
 }
 
+/* Каркас сторінки: шапка, вміст, підвал.
+   Середній рядок розтягується, тому підвал лишається внизу
+   навіть тоді, коли вмісту мало. */
+
+.page {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 var(--gap);
+}
+
 /* Шапка */
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 20px 0;
+    gap: var(--gap);
+    padding: var(--gap) 0;
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -67,7 +88,7 @@ h2 {
 }
 
 .nav a {
-    margin-left: 20px;
+    margin-left: var(--gap);
 }
 
 .nav a[aria-current="page"] {
@@ -79,7 +100,7 @@ h2 {
 /* Головний екран */
 
 .hero {
-    padding: 40px 0;
+    padding: 30px 0;
 }
 
 .hero p {
@@ -106,10 +127,6 @@ section {
     padding-bottom: 30px;
 }
 
-section li {
-    margin-bottom: 6px;
-}
-
 .status {
     margin-left: 6px;
     color: var(--color-accent);
@@ -123,7 +140,7 @@ section li {
 }
 
 .form fieldset {
-    margin: 0 0 20px;
+    margin: 0 0 var(--gap);
     padding: 15px 20px;
     border: 1px solid var(--color-border);
     border-radius: 4px;
@@ -133,6 +150,7 @@ section li {
     padding: 0 6px;
     font-weight: bold;
 }
+
 
 .field {
     margin: 0 0 15px;
@@ -191,13 +209,13 @@ section li {
 /* Підвал */
 
 .footer {
-    padding: 20px 0;
+    padding: var(--gap) 0;
     border-top: 1px solid var(--color-border);
     color: var(--color-muted);
     font-size: 14px;
 }
 
-/* Вузькі екрани */
+/* Телефони */
 
 @media (max-width: 600px) {
     .header {
