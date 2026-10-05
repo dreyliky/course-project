@@ -133,6 +133,43 @@ section {
     font-size: 14px;
 }
 
+/* Сітка карток.
+   Кількість колонок браузер добирає сам: кожна картка не вужча за 220px,
+   решту вільного місця колонки ділять порівну. */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Картка — колонка flex, тому посилання притискається до низу
+   і всі картки ряду вирівнюються між собою. */
+
+.card {
+    margin-bottom: 0;
+    padding: var(--gap);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}
+
+.card__title {
+    margin: 0;
+}
+
+.card__text {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 15px;
+}
+
+.card__link {
+    font-size: 15px;
+}
+
 /* Форма */
 
 .form {
