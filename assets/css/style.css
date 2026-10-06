@@ -70,6 +70,25 @@ h3 {
     padding: 0 var(--gap);
 }
 
+/* Вміст і бічна панель — дві колонки */
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--sidebar-width);
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 40px;
+}
+
+.content ol,
+.content > ul {
+    padding-left: 20px;
+}
+
+.content li {
+    margin-bottom: 6px;
+}
+
 /* Шапка */
 
 .header {
@@ -170,6 +189,42 @@ section {
     font-size: 15px;
 }
 
+/* Бічна панель */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.panel {
+    padding: 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}
+
+.panel__title {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.panel__text {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.panel__list {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    list-style: none;
+}
+
+.panel__list li {
+    margin-bottom: 6px;
+}
+
 /* Форма */
 
 .form {
@@ -250,6 +305,15 @@ section {
     border-top: 1px solid var(--color-border);
     color: var(--color-muted);
     font-size: 14px;
+}
+
+/* Планшети: бічна панель переходить під основний вміст */
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 /* Телефони */

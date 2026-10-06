@@ -20,68 +20,93 @@
         </nav>
     </header>
 
-    <main id="main">
-        <section class="hero">
-            <h1>Курсовий проєкт з вебтехнологій</h1>
-            <p>
-                Репозиторій, у якому крок за кроком збирається навчальний вебпроєкт.
-                Кожна лабораторна робота додає до нього нову частину, не переписуючи
-                того, що вже зроблено.
-            </p>
-            <a class="button" href="about.html">Детальніше про проєкт</a>
-        </section>
+    <div class="layout">
+        <main class="content" id="main">
+            <section class="hero">
+                <h1>Курсовий проєкт з вебтехнологій</h1>
+                <p>
+                    Репозиторій, у якому крок за кроком збирається навчальний вебпроєкт.
+                    Кожна лабораторна робота додає до нього нову частину, не переписуючи
+                    того, що вже зроблено.
+                </p>
+                <a class="button" href="about.html">Детальніше про проєкт</a>
+            </section>
 
-        <section>
-            <h2>Поточний стан</h2>
-            <p>З чого складається проєкт на цьому етапі:</p>
+            <section>
+                <h2>Поточний стан</h2>
+                <p>З чого складається проєкт на цьому етапі:</p>
 
-            <ul class="cards">
-                <li class="card">
-                    <h3 class="card__title">Середовище</h3>
-                    <p class="card__text">
-                        Налаштовано Git, редактор коду та репозиторій на GitHub.
-                        Сторінки публікуються автоматично.
-                    </p>
-                    <a class="card__link" href="about.html">Що саме зроблено</a>
-                </li>
+                <ul class="cards">
+                    <li class="card">
+                        <h3 class="card__title">Середовище</h3>
+                        <p class="card__text">
+                            Налаштовано Git, редактор коду та репозиторій на GitHub.
+                            Сторінки публікуються автоматично.
+                        </p>
+                        <a class="card__link" href="about.html">Що саме зроблено</a>
+                    </li>
 
-                <li class="card">
-                    <h3 class="card__title">Семантика</h3>
-                    <p class="card__text">
-                        Сторінки побудовано на семантичних тегах, рівні заголовків
-                        ідуть без пропусків.
-                    </p>
-                    <a class="card__link" href="about.html">План розвитку</a>
-                </li>
+                    <li class="card">
+                        <h3 class="card__title">Семантика</h3>
+                        <p class="card__text">
+                            Сторінки побудовано на семантичних тегах, рівні заголовків
+                            ідуть без пропусків.
+                        </p>
+                        <a class="card__link" href="about.html">План розвитку</a>
+                    </li>
 
-                <li class="card">
-                    <h3 class="card__title">Форма</h3>
-                    <p class="card__text">
-                        Зворотний зв'язок перевіряє сам браузер — без жодного рядка
-                        JavaScript.
-                    </p>
-                    <a class="card__link" href="contact.html">Відкрити форму</a>
-                </li>
+                    <li class="card">
+                        <h3 class="card__title">Форма</h3>
+                        <p class="card__text">
+                            Зворотний зв'язок перевіряє сам браузер — без жодного рядка
+                            JavaScript.
+                        </p>
+                        <a class="card__link" href="contact.html">Відкрити форму</a>
+                    </li>
 
-                <li class="card">
-                    <h3 class="card__title">Розкладка</h3>
-                    <p class="card__text">
-                        Каркас сторінки, сітка карток і бічна панель побудовані на
-                        Grid, вирівнювання всередині блоків — на Flexbox.
-                    </p>
-                    <a class="card__link" href="about.html">Технології</a>
-                </li>
-            </ul>
-        </section>
+                    <li class="card">
+                        <h3 class="card__title">Розкладка</h3>
+                        <p class="card__text">
+                            Каркас сторінки, сітка карток і бічна панель побудовані на
+                            Grid, вирівнювання всередині блоків — на Flexbox.
+                        </p>
+                        <a class="card__link" href="about.html">Технології</a>
+                    </li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Маєте запитання?</h2>
-            <p>
-                Зауваження чи пропозиції щодо проєкту можна надіслати
-                <a href="contact.html">через форму зворотного зв'язку</a>.
-            </p>
-        </section>
-    </main>
+            <section>
+                <h2>Маєте запитання?</h2>
+                <p>
+                    Зауваження чи пропозиції щодо проєкту можна надіслати
+                    <a href="contact.html">через форму зворотного зв'язку</a>.
+                </p>
+            </section>
+        </main>
+
+        <aside class="sidebar" aria-label="Додаткова інформація">
+            <section class="panel">
+                <h2 class="panel__title">Стан робіт</h2>
+
+                <ul class="panel__list">
+                    <li>Середовище і перша сторінка <span class="status">виконано</span></li>
+                    <li>Семантика і форми <span class="status">виконано</span></li>
+                    <li>Flexbox і Grid <span class="status">виконано</span></li>
+                    <li>Інтерактивність на JavaScript</li>
+                </ul>
+            </section>
+
+            <section class="panel">
+                <h2 class="panel__title">Посилання</h2>
+
+                <ul class="panel__list">
+                    <li><a href="https://github.com/dreyliky/course-project">Репозиторій на GitHub</a></li>
+                    <li><a href="about.html">Про проєкт</a></li>
+                    <li><a href="contact.html">Зворотний зв'язок</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
 
     <footer class="footer">
         <p>Навчальний проєкт, 2026</p>

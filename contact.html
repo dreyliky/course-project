@@ -20,76 +20,99 @@
         </nav>
     </header>
 
-    <main id="main">
-        <h1>Зворотний зв'язок</h1>
-        <p>
-            Заповніть форму, щоб надіслати запитання або зауваження щодо проєкту.
-            Поля, позначені зірочкою&nbsp;(*), обов'язкові до заповнення — перед
-            надсиланням браузер сам перевірить, чи все заповнено правильно.
-        </p>
-
-        <form class="form" action="#" method="post">
-            <fieldset>
-                <legend>Контактні дані</legend>
-
-                <p class="field">
-                    <label for="name">Ім'я <span class="required">*</span></label>
-                    <input id="name" name="name" type="text" autocomplete="name"
-                           required minlength="2" maxlength="60"
-                           aria-describedby="name-hint">
-                    <span class="hint" id="name-hint">Від 2 до 60 символів.</span>
-                </p>
-
-                <p class="field">
-                    <label for="email">Електронна пошта <span class="required">*</span></label>
-                    <input id="email" name="email" type="email" autocomplete="email"
-                           required maxlength="254"
-                           aria-describedby="email-hint">
-                    <span class="hint" id="email-hint">Наприклад: student@example.com</span>
-                </p>
-
-                <p class="field">
-                    <label for="phone">Телефон</label>
-                    <input id="phone" name="phone" type="tel" autocomplete="tel"
-                           pattern="\+?[0-9 \-]{10,17}"
-                           aria-describedby="phone-hint">
-                    <span class="hint" id="phone-hint">Необов'язково. Формат: +380 44 123 4567</span>
-                </p>
-            </fieldset>
-
-            <fieldset>
-                <legend>Повідомлення</legend>
-
-                <p class="field">
-                    <label for="topic">Тема <span class="required">*</span></label>
-                    <select id="topic" name="topic" required>
-                        <option value="">Оберіть тему зі списку</option>
-                        <option value="question">Запитання щодо проєкту</option>
-                        <option value="issue">Повідомити про помилку</option>
-                        <option value="offer">Пропозиція</option>
-                        <option value="other">Інше</option>
-                    </select>
-                </p>
-
-                <p class="field">
-                    <label for="message">Текст повідомлення <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="6"
-                              required minlength="10" maxlength="500"
-                              aria-describedby="message-hint"></textarea>
-                    <span class="hint" id="message-hint">Від 10 до 500 символів.</span>
-                </p>
-            </fieldset>
-
-            <p class="field field--checkbox">
-                <input id="consent" name="consent" type="checkbox" required>
-                <label for="consent">
-                    Погоджуюсь на обробку надісланих даних <span class="required">*</span>
-                </label>
+    <div class="layout">
+        <main class="content" id="main">
+            <h1>Зворотний зв'язок</h1>
+            <p>
+                Заповніть форму, щоб надіслати запитання або зауваження щодо проєкту.
+                Поля, позначені зірочкою&nbsp;(*), обов'язкові до заповнення — перед
+                надсиланням браузер сам перевірить, чи все заповнено правильно.
             </p>
 
-            <button class="button" type="submit">Надіслати повідомлення</button>
-        </form>
-    </main>
+            <form class="form" action="#" method="post">
+                <fieldset>
+                    <legend>Контактні дані</legend>
+
+                    <p class="field">
+                        <label for="name">Ім'я <span class="required">*</span></label>
+                        <input id="name" name="name" type="text" autocomplete="name"
+                               required minlength="2" maxlength="60"
+                               aria-describedby="name-hint">
+                        <span class="hint" id="name-hint">Від 2 до 60 символів.</span>
+                    </p>
+
+                    <p class="field">
+                        <label for="email">Електронна пошта <span class="required">*</span></label>
+                        <input id="email" name="email" type="email" autocomplete="email"
+                               required maxlength="254"
+                               aria-describedby="email-hint">
+                        <span class="hint" id="email-hint">Наприклад: student@example.com</span>
+                    </p>
+
+                    <p class="field">
+                        <label for="phone">Телефон</label>
+                        <input id="phone" name="phone" type="tel" autocomplete="tel"
+                               pattern="\+?[0-9 \-]{10,17}"
+                               aria-describedby="phone-hint">
+                        <span class="hint" id="phone-hint">Необов'язково. Формат: +380 44 123 4567</span>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Повідомлення</legend>
+
+                    <p class="field">
+                        <label for="topic">Тема <span class="required">*</span></label>
+                        <select id="topic" name="topic" required>
+                            <option value="">Оберіть тему зі списку</option>
+                            <option value="question">Запитання щодо проєкту</option>
+                            <option value="issue">Повідомити про помилку</option>
+                            <option value="offer">Пропозиція</option>
+                            <option value="other">Інше</option>
+                        </select>
+                    </p>
+
+                    <p class="field">
+                        <label for="message">Текст повідомлення <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6"
+                                  required minlength="10" maxlength="500"
+                                  aria-describedby="message-hint"></textarea>
+                        <span class="hint" id="message-hint">Від 10 до 500 символів.</span>
+                    </p>
+                </fieldset>
+
+                <p class="field field--checkbox">
+                    <input id="consent" name="consent" type="checkbox" required>
+                    <label for="consent">
+                        Погоджуюсь на обробку надісланих даних <span class="required">*</span>
+                    </label>
+                </p>
+
+                <button class="button" type="submit">Надіслати повідомлення</button>
+            </form>
+        </main>
+
+        <aside class="sidebar" aria-label="Додаткова інформація">
+            <section class="panel">
+                <h2 class="panel__title">Як це працює</h2>
+                <p class="panel__text">
+                    Обробника на сервері поки немає: завдання цього етапу — перевірка
+                    заповнення на боці браузера. Надсилання додам на етапі роботи
+                    з даними.
+                </p>
+            </section>
+
+            <section class="panel">
+                <h2 class="panel__title">Посилання</h2>
+
+                <ul class="panel__list">
+                    <li><a href="https://github.com/dreyliky/course-project">Репозиторій на GitHub</a></li>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="about.html">Про проєкт</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
 
     <footer class="footer">
         <p>Навчальний проєкт, 2026</p>
