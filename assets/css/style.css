@@ -189,6 +189,25 @@ section {
     font-size: 15px;
 }
 
+/* Ряд тегів */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tags__item {
+    margin-bottom: 0;
+    padding: 6px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    font-size: 14px;
+}
+
 /* Бічна панель */
 
 .sidebar {

@@ -37,7 +37,8 @@
                     <li>налаштовано Git, редактор коду та репозиторій на GitHub;</li>
                     <li>закладено структуру каталогів для розмітки, стилів і звітів;</li>
                     <li>сторінки опубліковано через GitHub Pages;</li>
-                    <li>форму зворотного зв'язку перевіряє сам браузер, без скриптів.</li>
+                    <li>форму зворотного зв'язку перевіряє сам браузер, без скриптів;</li>
+                    <li>розкладку сторінок побудовано на Grid і Flexbox.</li>
                 </ul>
             </section>
 
@@ -48,6 +49,7 @@
                 <ol>
                     <li>Середовище і перша сторінка <span class="status">виконано</span></li>
                     <li>Семантика і форми <span class="status">виконано</span></li>
+                    <li>Flexbox і Grid <span class="status">виконано</span></li>
                     <li>Інтерактивність на JavaScript</li>
                     <li>Робота з даними</li>
                     <li>Збірка та оптимізація</li>
@@ -55,14 +57,55 @@
             </section>
 
             <section>
+                <h2>Як побудовано розкладку</h2>
+
+                <ul class="cards">
+                    <li class="card">
+                        <h3 class="card__title">Каркас сторінки</h3>
+                        <p class="card__text">
+                            Grid у три рядки: шапка, вміст, підвал. Середній рядок
+                            розтягується, тому підвал притиснутий донизу навіть на
+                            короткій сторінці.
+                        </p>
+                    </li>
+
+                    <li class="card">
+                        <h3 class="card__title">Вміст і бічна панель</h3>
+                        <p class="card__text">
+                            Grid у дві колонки. На вузькому екрані колонки стають одна
+                            під одною, бічна панель іде після основного тексту.
+                        </p>
+                    </li>
+
+                    <li class="card">
+                        <h3 class="card__title">Сітка карток</h3>
+                        <p class="card__text">
+                            Кількість колонок браузер добирає сам під ширину екрана —
+                            окремі точки зламу для цього не потрібні.
+                        </p>
+                    </li>
+
+                    <li class="card">
+                        <h3 class="card__title">Вирівнювання</h3>
+                        <p class="card__text">
+                            Flexbox відповідає за шапку, ряд тегів і внутрішню будову
+                            картки: посилання притиснуте до низу незалежно від довжини
+                            тексту.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
                 <h2>Технології</h2>
 
-                <ul>
-                    <li>HTML5 — семантична розмітка та вбудована перевірка форм</li>
-                    <li>CSS3 — оформлення сторінок і станів полів</li>
-                    <li>Git та GitHub — контроль версій</li>
-                    <li>GitHub Pages — публікація</li>
-                    <li>Visual Studio Code — редактор коду</li>
+                <ul class="tags">
+                    <li class="tags__item">HTML5</li>
+                    <li class="tags__item">CSS Grid</li>
+                    <li class="tags__item">Flexbox</li>
+                    <li class="tags__item">Git та GitHub</li>
+                    <li class="tags__item">GitHub Pages</li>
+                    <li class="tags__item">Visual Studio Code</li>
                 </ul>
             </section>
         </main>
