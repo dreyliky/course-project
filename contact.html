@@ -33,21 +33,23 @@
                 <fieldset>
                     <legend>Контактні дані</legend>
 
-                    <p class="field">
-                        <label for="name">Ім'я <span class="required">*</span></label>
-                        <input id="name" name="name" type="text" autocomplete="name"
-                               required minlength="2" maxlength="60"
-                               aria-describedby="name-hint">
-                        <span class="hint" id="name-hint">Від 2 до 60 символів.</span>
-                    </p>
+                    <div class="form__row">
+                        <p class="field">
+                            <label for="name">Ім'я <span class="required">*</span></label>
+                            <input id="name" name="name" type="text" autocomplete="name"
+                                   required minlength="2" maxlength="60"
+                                   aria-describedby="name-hint">
+                            <span class="hint" id="name-hint">Від 2 до 60 символів.</span>
+                        </p>
 
-                    <p class="field">
-                        <label for="email">Електронна пошта <span class="required">*</span></label>
-                        <input id="email" name="email" type="email" autocomplete="email"
-                               required maxlength="254"
-                               aria-describedby="email-hint">
-                        <span class="hint" id="email-hint">Наприклад: student@example.com</span>
-                    </p>
+                        <p class="field">
+                            <label for="email">Електронна пошта <span class="required">*</span></label>
+                            <input id="email" name="email" type="email" autocomplete="email"
+                                   required maxlength="254"
+                                   aria-describedby="email-hint">
+                            <span class="hint" id="email-hint">Наприклад: student@example.com</span>
+                        </p>
+                    </div>
 
                     <p class="field">
                         <label for="phone">Телефон</label>
