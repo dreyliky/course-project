@@ -169,6 +169,9 @@ section {
    і всі картки ряду вирівнюються між собою. */
 
 .card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     margin-bottom: 0;
     padding: var(--gap);
     border: 1px solid var(--color-border);
@@ -186,6 +189,7 @@ section {
 }
 
 .card__link {
+    margin-top: auto;
     font-size: 15px;
 }
 
