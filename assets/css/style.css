@@ -15,6 +15,14 @@
 
 /* Базові стилі */
 
+/* Ширина елемента рахується разом із рамкою та внутрішніми відступами,
+   інакше width: 100% плюс padding дає переповнення контейнера. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background-color: var(--color-bg);
