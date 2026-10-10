@@ -1,18 +1,5 @@
 /* Стилі сторінок курсового проєкту. */
 
-:root {
-    --color-text: #222222;
-    --color-muted: #666666;
-    --color-accent: #2f5bd0;
-    --color-error: #c0392b;
-    --color-border: #dddddd;
-    --color-bg: #ffffff;
-
-    --page-width: 1040px;
-    --sidebar-width: 260px;
-    --gap: 20px;
-}
-
 /* Базові стилі */
 
 /* Ширина елемента рахується разом із рамкою та внутрішніми відступами,
