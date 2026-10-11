@@ -1,15 +1,45 @@
 /* Дизайн-токени проєкту.
-   Єдине місце, де задані кольори та розміри розкладки. */
+   Єдине місце, де задані кольори, розміри, відступи й форма елементів.
+   Решта стилів звертається лише до цих змінних, без власних значень. */
 
 :root {
+    /* Кольори — світла тема */
+    --color-bg: #ffffff;
     --color-text: #222222;
-    --color-muted: #666666;
+    --color-text-muted: #666666;
     --color-accent: #2f5bd0;
     --color-error: #c0392b;
     --color-border: #dddddd;
-    --color-bg: #ffffff;
 
+    /* Типографіка */
+    --font-base: Arial, Helvetica, sans-serif;
+    --font-size-sm: 14px;
+    --font-size-md: 15px;
+    --font-size-base: 16px;
+    --font-size-h3: 17px;
+    --font-size-h2: 22px;
+    --font-size-h1: 32px;
+    --font-size-h1-sm: 26px;
+    --line-height: 1.6;
+
+    /* Відступи */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 15px;
+    --space-lg: 20px;
+    --space-xl: 30px;
+    --space-2xl: 40px;
+
+    /* Форма елементів */
+    --radius-sm: 4px;
+    --radius-pill: 20px;
+    --border-width: 1px;
+    --focus-width: 2px;
+    --focus-offset: 2px;
+
+    /* Розкладка */
     --page-width: 1040px;
     --sidebar-width: 260px;
-    --gap: 20px;
+    --card-min-width: 220px;
+    --form-width: 520px;
 }
