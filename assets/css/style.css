@@ -333,18 +333,20 @@ section {
     font-size: var(--font-size-sm);
 }
 
-/* Планшети: бічна панель переходить під основний вміст */
+/* Планшет: до 1023px бічна панель переходить під основний вміст.
+   Контрольна ширина — 768px. */
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
     .layout {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
     }
 }
 
-/* Телефони */
+/* Телефон: до 599px усе шикується в один стовпець.
+   Контрольна ширина — 360px. */
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
