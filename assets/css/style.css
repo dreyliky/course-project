@@ -130,7 +130,7 @@ h3 {
     background-color: var(--color-accent);
     border: none;
     border-radius: var(--radius-sm);
-    color: var(--color-bg);
+    color: var(--color-on-accent);
     font-family: inherit;
     font-size: var(--font-size-base);
     text-decoration: none;
@@ -171,6 +171,7 @@ section {
     gap: var(--space-sm);
     margin-bottom: 0;
     padding: var(--space-lg);
+    background-color: var(--color-surface);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-sm);
 }
@@ -204,6 +205,7 @@ section {
 .tags__item {
     margin-bottom: 0;
     padding: var(--space-xs) var(--space-md);
+    background-color: var(--color-surface);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-pill);
     font-size: var(--font-size-sm);
@@ -219,6 +221,7 @@ section {
 
 .panel {
     padding: var(--space-md);
+    background-color: var(--color-surface);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-sm);
 }
@@ -284,8 +287,10 @@ section {
 .field textarea {
     width: 100%;
     padding: var(--space-sm);
+    background-color: var(--color-surface);
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-sm);
+    color: var(--color-text);
     font-family: inherit;
     font-size: var(--font-size-base);
 }

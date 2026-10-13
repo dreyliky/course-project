@@ -5,9 +5,11 @@
 :root {
     /* Кольори — світла тема */
     --color-bg: #ffffff;
+    --color-surface: #ffffff;
     --color-text: #222222;
     --color-text-muted: #666666;
     --color-accent: #2f5bd0;
+    --color-on-accent: #ffffff;
     --color-error: #c0392b;
     --color-border: #dddddd;
 
@@ -42,4 +44,21 @@
     --sidebar-width: 260px;
     --card-min-width: 220px;
     --form-width: 520px;
+}
+
+/* Кольори — темна тема.
+   Перевизначаються лише кольорові токени: решта значень від теми не залежить,
+   тому розміри й відступи тут не дублюються. */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #14171c;
+        --color-surface: #1c2027;
+        --color-text: #eceef1;
+        --color-text-muted: #a9b2bd;
+        --color-accent: #9db4ff;
+        --color-on-accent: #10131a;
+        --color-error: #ff9d92;
+        --color-border: #39404b;
+    }
 }
