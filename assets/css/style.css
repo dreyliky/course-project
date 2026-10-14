@@ -282,13 +282,16 @@ section {
     margin-bottom: var(--space-xs);
 }
 
+/* Рамка поля вводу темніша за декоративні: елемент керування має бути
+   помітним, це вимога WCAG до контрасту нетекстових елементів. */
+
 .field input,
 .field select,
 .field textarea {
     width: 100%;
     padding: var(--space-sm);
     background-color: var(--color-surface);
-    border: var(--border-width) solid var(--color-border);
+    border: var(--border-width) solid var(--color-border-strong);
     border-radius: var(--radius-sm);
     color: var(--color-text);
     font-family: inherit;

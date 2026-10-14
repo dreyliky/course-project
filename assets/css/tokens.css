@@ -6,12 +6,13 @@
     /* Кольори — світла тема */
     --color-bg: #ffffff;
     --color-surface: #ffffff;
-    --color-text: #222222;
-    --color-text-muted: #666666;
-    --color-accent: #2f5bd0;
+    --color-text: #1b1f24;
+    --color-text-muted: #5a6470;
+    --color-accent: #1f4fc4;
     --color-on-accent: #ffffff;
-    --color-error: #c0392b;
-    --color-border: #dddddd;
+    --color-error: #b02a20;
+    --color-border: #c9ced6;
+    --color-border-strong: #767d88;
 
     /* Типографіка */
     --font-base: Arial, Helvetica, sans-serif;
@@ -60,5 +61,6 @@
         --color-on-accent: #10131a;
         --color-error: #ff9d92;
         --color-border: #39404b;
+        --color-border-strong: #78818e;
     }
 }
