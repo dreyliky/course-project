@@ -332,6 +332,19 @@ section {
     margin-bottom: 0;
 }
 
+/* Перемикач теми */
+
+.theme-toggle {
+    padding: var(--space-xs) var(--space-md);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+}
+
 /* Підвал */
 
 .footer {

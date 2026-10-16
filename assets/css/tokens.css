@@ -49,10 +49,15 @@
 
 /* Кольори — темна тема.
    Перевизначаються лише кольорові токени: решта значень від теми не залежить,
-   тому розміри й відступи тут не дублюються. */
+   тому розміри й відступи тут не дублюються.
+
+   Тема вмикається у двох випадках: коли темну задано в системі й користувач
+   не вимагав світлу, і коли він обрав темну кнопкою в шапці (атрибут
+   data-theme на html). Обʼєднати медіазапит і селектор атрибута в одне
+   правило засобами CSS не можна, тому набір значень повторюється двічі. */
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --color-bg: #14171c;
         --color-surface: #1c2027;
         --color-text: #eceef1;
@@ -63,4 +68,16 @@
         --color-border: #39404b;
         --color-border-strong: #78818e;
     }
+}
+
+:root[data-theme="dark"] {
+    --color-bg: #14171c;
+    --color-surface: #1c2027;
+    --color-text: #eceef1;
+    --color-text-muted: #a9b2bd;
+    --color-accent: #9db4ff;
+    --color-on-accent: #10131a;
+    --color-error: #ff9d92;
+    --color-border: #39404b;
+    --color-border-strong: #78818e;
 }
