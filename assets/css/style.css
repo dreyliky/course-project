@@ -345,6 +345,15 @@ section {
     cursor: pointer;
 }
 
+/* Повідомлення для сторінки без JavaScript */
+
+.notice {
+    padding: var(--space-md);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+}
+
 /* Підвал */
 
 .footer {

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Історія змін курсового проєкту: останні коміти репозиторію з фільтром за типом зміни.">
+    <title>Активність — Курсовий проєкт</title>
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+<body class="page">
+    <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+    <header class="header">
+        <a class="header__name" href="index.html">Курсовий проєкт</a>
+
+        <nav class="nav" aria-label="Основна навігація">
+            <a href="index.html">Головна</a>
+            <a href="about.html">Про проєкт</a>
+            <a href="activity.html" aria-current="page">Активність</a>
+            <a href="contact.html">Зворотний зв'язок</a>
+        </nav>
+
+        <button class="theme-toggle" type="button" data-theme-toggle hidden>
+            Тема: <span data-theme-label>як у системі</span>
+        </button>
+    </header>
+
+    <div class="layout">
+        <main class="content" id="main">
+            <h1>Активність</h1>
+            <p>
+                Останні тридцять комітів репозиторію. Дані завантажуються під час
+                відкриття сторінки з публічного GitHub API, тому список завжди
+                показує поточний стан роботи.
+            </p>
+
+            <noscript>
+                <p class="notice">
+                    Список комітів будується в браузері, тому без увімкненого
+                    JavaScript він не відображається. Переглянути історію можна
+                    <a href="https://github.com/dreyliky/course-project/commits/main">безпосередньо на GitHub</a>.
+                </p>
+            </noscript>
+
+        </main>
+
+        <aside class="sidebar" aria-label="Додаткова інформація">
+            <section class="panel">
+                <h2 class="panel__title">Звідки дані</h2>
+                <p class="panel__text">
+                    Запит іде до публічного GitHub API без авторизації. Ліміт —
+                    шістдесят запитів на годину з однієї адреси; при його
+                    перевищенні сторінка покаже відповідне повідомлення.
+                </p>
+            </section>
+
+            <section class="panel">
+                <h2 class="panel__title">Посилання</h2>
+
+                <ul class="panel__list">
+                    <li><a href="https://github.com/dreyliky/course-project">Репозиторій на GitHub</a></li>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="about.html">Про проєкт</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <p>Навчальний проєкт, 2026</p>
+    </footer>
+
+</body>
+</html>
