@@ -354,6 +354,63 @@ section {
     border-radius: var(--radius-sm);
 }
 
+/* Список комітів */
+
+.commits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
+    gap: var(--space-lg);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.commit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-bottom: 0;
+    padding: var(--space-lg);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.commit__type {
+    padding: 0 var(--space-sm);
+    background-color: var(--color-accent);
+    border-radius: var(--radius-pill);
+    color: var(--color-on-accent);
+    font-size: var(--font-size-sm);
+}
+
+.commit__title {
+    margin: 0;
+    font-size: var(--font-size-h3);
+}
+
+.commit__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+.commit__details {
+    margin-top: auto;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    font-family: inherit;
+    font-size: var(--font-size-md);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /* Підвал */
 
 .footer {

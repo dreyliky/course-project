@@ -44,6 +44,18 @@
                 </p>
             </noscript>
 
+            <ul class="commits" data-commit-list></ul>
+
+            <template data-commit-template>
+                <li class="commit">
+                    <span class="commit__type" data-commit-type></span>
+                    <h2 class="commit__title" data-commit-title></h2>
+                    <p class="commit__meta">
+                        <time data-commit-date></time>
+                        <code data-commit-sha></code>
+                    </p>
+                </li>
+            </template>
         </main>
 
         <aside class="sidebar" aria-label="Додаткова інформація">
@@ -72,5 +84,6 @@
         <p>Навчальний проєкт, 2026</p>
     </footer>
 
+    <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
