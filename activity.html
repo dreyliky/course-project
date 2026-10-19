@@ -44,6 +44,15 @@
                 </p>
             </noscript>
 
+            <p class="state" data-state-loading>Завантаження списку комітів…</p>
+
+            <p class="state state--error" data-state-error hidden>
+                <span data-error-text></span>
+                <button class="button" type="button" data-retry>Спробувати ще раз</button>
+            </p>
+
+            <p class="state" data-state-empty hidden>За обраним типом комітів немає.</p>
+
             <ul class="commits" data-commit-list></ul>
 
             <template data-commit-template>

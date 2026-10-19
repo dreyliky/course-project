@@ -354,6 +354,23 @@ section {
     border-radius: var(--radius-sm);
 }
 
+/* Стани завантаження й помилки */
+
+.state {
+    color: var(--color-text-muted);
+}
+
+.state--error {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border: var(--border-width) solid var(--color-error);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+}
+
 /* Список комітів */
 
 .commits {
@@ -456,5 +473,9 @@ section {
         display: block;
         width: 100%;
         text-align: center;
+    }
+
+    .state--error .button {
+        width: auto;
     }
 }

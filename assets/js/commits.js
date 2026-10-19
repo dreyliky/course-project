@@ -1,4 +1,4 @@
-/* Список комітів, завантажений із зовнішнього джерела. */
+/* Список комітів: завантаження, стани очікування й помилки. */
 
 import { fetchCommits } from './api.js';
 import { formatDate } from './format.js';
@@ -26,10 +26,29 @@ function createCard(commit) {
    на розмітку, яку виконає браузер. */
 function renderList(commits) {
     elements.list.replaceChildren(...commits.map(createCard));
+    elements.empty.hidden = commits.length > 0;
+}
+
+function showState({ loading = false, error = '' }) {
+    elements.loading.hidden = !loading;
+    elements.error.hidden = !error;
+    elements.errorText.textContent = error;
+
+    if (loading || error) {
+        elements.list.replaceChildren();
+        elements.empty.hidden = true;
+    }
 }
 
 async function load() {
-    renderList(await fetchCommits());
+    showState({ loading: true });
+
+    try {
+        showState({});
+        renderList(await fetchCommits());
+    } catch (error) {
+        showState({ error: error.message });
+    }
 }
 
 export function initCommits() {
@@ -41,8 +60,14 @@ export function initCommits() {
 
     elements = {
         list,
-        template: document.querySelector('[data-commit-template]')
+        template: document.querySelector('[data-commit-template]'),
+        loading: document.querySelector('[data-state-loading]'),
+        error: document.querySelector('[data-state-error]'),
+        errorText: document.querySelector('[data-error-text]'),
+        empty: document.querySelector('[data-state-empty]')
     };
+
+    document.querySelector('[data-retry]').addEventListener('click', load);
 
     load();
 }
