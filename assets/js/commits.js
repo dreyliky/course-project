@@ -1,8 +1,12 @@
-/* Список комітів: завантаження, стани очікування й помилки. */
+/* Список комітів: завантаження, стани очікування й помилки, фільтр за типом. */
 
 import { fetchCommits } from './api.js';
 import { formatDate } from './format.js';
 
+const FILTER_ALL = 'all';
+
+let allCommits = [];
+let activeType = FILTER_ALL;
 let elements;
 
 /* Розмітка картки лежить у теґу template в HTML, а не збирається рядками
@@ -29,6 +33,45 @@ function renderList(commits) {
     elements.empty.hidden = commits.length > 0;
 }
 
+function visibleCommits() {
+    if (activeType === FILTER_ALL) {
+        return allCommits;
+    }
+
+    return allCommits.filter((commit) => commit.type === activeType);
+}
+
+/* Кнопки фільтра будуються з самих даних: показувати тип, якого в списку
+   немає, немає сенсу. */
+function renderFilters() {
+    const types = [FILTER_ALL, ...new Set(allCommits.map((commit) => commit.type))];
+
+    elements.filters.replaceChildren(...types.map((type) => {
+        const button = document.createElement('button');
+
+        button.type = 'button';
+        button.className = 'filter';
+        button.textContent = type === FILTER_ALL ? 'усі' : type;
+        button.setAttribute('aria-pressed', String(type === activeType));
+        button.addEventListener('click', () => selectType(type));
+
+        return button;
+    }));
+
+    elements.filters.hidden = false;
+}
+
+function selectType(type) {
+    activeType = type;
+
+    for (const button of elements.filters.children) {
+        const label = button.textContent === 'усі' ? FILTER_ALL : button.textContent;
+        button.setAttribute('aria-pressed', String(label === activeType));
+    }
+
+    renderList(visibleCommits());
+}
+
 function showState({ loading = false, error = '' }) {
     elements.loading.hidden = !loading;
     elements.error.hidden = !error;
@@ -37,6 +80,7 @@ function showState({ loading = false, error = '' }) {
     if (loading || error) {
         elements.list.replaceChildren();
         elements.empty.hidden = true;
+        elements.filters.hidden = true;
     }
 }
 
@@ -44,8 +88,10 @@ async function load() {
     showState({ loading: true });
 
     try {
+        allCommits = await fetchCommits();
         showState({});
-        renderList(await fetchCommits());
+        renderFilters();
+        renderList(visibleCommits());
     } catch (error) {
         showState({ error: error.message });
     }
@@ -61,6 +107,7 @@ export function initCommits() {
     elements = {
         list,
         template: document.querySelector('[data-commit-template]'),
+        filters: document.querySelector('[data-filters]'),
         loading: document.querySelector('[data-state-loading]'),
         error: document.querySelector('[data-state-error]'),
         errorText: document.querySelector('[data-error-text]'),

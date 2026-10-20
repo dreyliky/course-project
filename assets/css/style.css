@@ -354,6 +354,35 @@ section {
     border-radius: var(--radius-sm);
 }
 
+/* Фільтр за типом зміни */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.filter {
+    padding: var(--space-xs) var(--space-md);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+}
+
+/* Обраний фільтр позначений не лише кольором: стан несе aria-pressed,
+   який озвучує зчитувач екрана. */
+
+.filter[aria-pressed="true"] {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
 /* Стани завантаження й помилки */
 
 .state {
