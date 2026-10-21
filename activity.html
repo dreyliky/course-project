@@ -65,6 +65,7 @@
                         <time data-commit-date></time>
                         <code data-commit-sha></code>
                     </p>
+                    <button class="commit__details" type="button" data-commit-details>Подробиці</button>
                 </li>
             </template>
         </main>
@@ -94,6 +95,28 @@
     <footer class="footer">
         <p>Навчальний проєкт, 2026</p>
     </footer>
+
+    <dialog class="modal" data-modal aria-labelledby="modal-title">
+        <h2 class="modal__title" id="modal-title" data-modal-title></h2>
+
+        <p class="modal__body" data-modal-body></p>
+
+        <dl class="modal__facts">
+            <dt>Автор</dt>
+            <dd data-modal-author></dd>
+
+            <dt>Дата</dt>
+            <dd><time data-modal-date></time></dd>
+
+            <dt>Хеш</dt>
+            <dd><code data-modal-sha></code></dd>
+        </dl>
+
+        <p class="modal__actions">
+            <a class="modal__link" data-modal-link href="#">Відкрити на GitHub</a>
+            <button class="button" type="button" data-modal-close>Закрити</button>
+        </p>
+    </dialog>
 
     <script type="module" src="assets/js/main.js"></script>
 </body>

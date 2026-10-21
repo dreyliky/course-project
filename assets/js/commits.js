@@ -2,6 +2,7 @@
 
 import { fetchCommits } from './api.js';
 import { formatDate } from './format.js';
+import { openCommitModal } from './modal.js';
 
 const FILTER_ALL = 'all';
 
@@ -21,6 +22,10 @@ function createCard(commit) {
     const time = card.querySelector('[data-commit-date]');
     time.textContent = formatDate(commit.date);
     time.setAttribute('datetime', commit.date);
+
+    const button = card.querySelector('[data-commit-details]');
+    button.addEventListener('click', () => openCommitModal(commit));
+    button.setAttribute('aria-label', `Подробиці коміту: ${commit.title}`);
 
     return card;
 }
