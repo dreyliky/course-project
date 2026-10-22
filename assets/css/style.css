@@ -11,6 +11,13 @@
     box-sizing: border-box;
 }
 
+/* Атрибут hidden приховує елемент через display: none у стилях браузера,
+   але будь-яке власне правило з display його перебиває. Блоки, які керуються
+   з JavaScript, мають і власний display, тому приховування підсилене. */
+[hidden] {
+    display: none !important;
+}
+
 body {
     margin: 0;
     background-color: var(--color-bg);
