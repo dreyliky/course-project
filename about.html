@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Опис курсового проєкту з вебтехнологій: склад виконаної роботи, план розвитку та використані технології.">
     <title>Про проєкт — Курсовий проєкт</title>
-    <link rel="stylesheet" href="assets/css/tokens.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="/src/styles/tokens.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <script>
+        /* Мінімальний інлайн до першого малювання: модулі виконуються після
+           розбору документа, і сторінка встигла б блимнути світлою темою.
+           Повну логіку перемикача містить src/scripts/theme.js. */
+        try {
+            var savedTheme = localStorage.getItem('course-project-theme');
+            if (savedTheme === 'light' || savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+        } catch (error) {
+            /* сховище недоступне — лишається системна тема */
+        }
+    </script>
 </head>
 <body class="page">
     <a class="skip-link" href="#main">Перейти до основного вмісту</a>
@@ -167,5 +179,6 @@
     <footer class="footer">
         <p>Навчальний проєкт, 2026</p>
     </footer>
+    <script type="module" src="/src/scripts/main.js"></script>
 </body>
 </html>
