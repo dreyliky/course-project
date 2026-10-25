@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
    тому посилання на ресурси мають починатися з цього префікса. */
 const BASE_PATH = '/course-project/';
 
-const page = (name) => fileURLToPath(new URL(`./${name}.html`, import.meta.url));
+const page = (name: string): string => fileURLToPath(new URL(`./${name}.html`, import.meta.url));
 
 export default defineConfig({
     base: BASE_PATH,
