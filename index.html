@@ -10,7 +10,7 @@
     <script>
         /* Мінімальний інлайн до першого малювання: модулі виконуються після
            розбору документа, і сторінка встигла б блимнути світлою темою.
-           Повну логіку перемикача містить src/scripts/theme.js. */
+           Повну логіку перемикача містить src/scripts/theme.ts. */
         try {
             var savedTheme = localStorage.getItem('course-project-theme');
             if (savedTheme === 'light' || savedTheme === 'dark') {
@@ -140,6 +140,6 @@
     <footer class="footer">
         <p>Навчальний проєкт, 2026</p>
     </footer>
-    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/scripts/main.ts"></script>
 </body>
 </html>

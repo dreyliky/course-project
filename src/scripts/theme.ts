@@ -1,12 +1,12 @@
-/* Перемикач теми: системна → світла → темна.
+/* Перемикач теми: системна → світла → темна. */
 
-   Антиспалаховий код переїхав у маленький інлайн у <head>: модулі
-   виконуються після розбору документа, і сторінка встигла б блимнути
-   світлою темою. Тут лишилася логіка самої кнопки. */
+import type { ThemeMode } from '../types/theme.js';
+import { isThemeMode, THEME_MODES } from '../types/theme.js';
+import { findElement, requireElement } from './dom.js';
 
-const STORAGE_KEY = 'course-project-theme';
-const MODES = ['system', 'light', 'dark'];
-const LABELS = {
+export const THEME_STORAGE_KEY = 'course-project-theme';
+
+const LABELS: Record<ThemeMode, string> = {
     system: 'як у системі',
     light: 'світла',
     dark: 'темна'
@@ -14,26 +14,26 @@ const LABELS = {
 
 /* Сховище може бути недоступним: приватний режим, заборонені дані сайту.
    У такому разі перемикач працює, просто вибір не переживе перезавантаження. */
-function readMode() {
+function readMode(): ThemeMode {
     try {
-        const saved = localStorage.getItem(STORAGE_KEY);
+        const saved: unknown = localStorage.getItem(THEME_STORAGE_KEY);
 
-        return MODES.includes(saved) ? saved : 'system';
+        return isThemeMode(saved) ? saved : 'system';
     } catch {
         return 'system';
     }
 }
 
-function saveMode(mode) {
+function saveMode(mode: ThemeMode): void {
     try {
-        localStorage.setItem(STORAGE_KEY, mode);
+        localStorage.setItem(THEME_STORAGE_KEY, mode);
     } catch {
         /* мовчки: незбережений вибір не ламає сторінку */
     }
 }
 
 /* Системна тема — це відсутність атрибута: далі вирішує медіазапит у CSS. */
-function applyMode(mode) {
+function applyMode(mode: ThemeMode): void {
     if (mode === 'system') {
         document.documentElement.removeAttribute('data-theme');
     } else {
@@ -41,17 +41,17 @@ function applyMode(mode) {
     }
 }
 
-export function initTheme() {
-    const button = document.querySelector('[data-theme-toggle]');
+export function initTheme(): void {
+    const button = findElement<HTMLButtonElement>('[data-theme-toggle]');
 
-    if (!button) {
+    if (button === null) {
         return;
     }
 
-    const label = button.querySelector('[data-theme-label]');
+    const label = requireElement('[data-theme-label]', button);
     let mode = readMode();
 
-    function render() {
+    function render(): void {
         label.textContent = LABELS[mode];
     }
 
@@ -63,7 +63,13 @@ export function initTheme() {
     button.hidden = false;
 
     button.addEventListener('click', () => {
-        mode = MODES[(MODES.indexOf(mode) + 1) % MODES.length];
+        const next = THEME_MODES[(THEME_MODES.indexOf(mode) + 1) % THEME_MODES.length];
+
+        if (next === undefined) {
+            return;
+        }
+
+        mode = next;
         applyMode(mode);
         saveMode(mode);
         render();
