@@ -1,0 +1,22 @@
+{
+    "printWidth": 100,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "none",
+    "endOfLine": "lf",
+    "overrides": [
+        {
+            "files": ["*.html", "*.css"],
+            "options": {
+                "singleQuote": false
+            }
+        },
+        {
+            "files": ["*.yml", "*.yaml"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}

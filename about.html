@@ -1,184 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Опис курсового проєкту з вебтехнологій: склад виконаної роботи, план розвитку та використані технології.">
-    <title>Про проєкт — Курсовий проєкт</title>
-    <link rel="stylesheet" href="/src/styles/tokens.css">
-    <link rel="stylesheet" href="/src/styles/style.css">
-    <script>
-        /* Мінімальний інлайн до першого малювання: модулі виконуються після
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Опис курсового проєкту з вебтехнологій: склад виконаної роботи, план розвитку та використані технології."
+        />
+        <title>Про проєкт — Курсовий проєкт</title>
+        <link rel="stylesheet" href="/src/styles/tokens.css" />
+        <link rel="stylesheet" href="/src/styles/style.css" />
+        <script>
+            /* Мінімальний інлайн до першого малювання: модулі виконуються після
            розбору документа, і сторінка встигла б блимнути світлою темою.
            Повну логіку перемикача містить src/scripts/theme.ts. */
-        try {
-            var savedTheme = localStorage.getItem('course-project-theme');
-            if (savedTheme === 'light' || savedTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', savedTheme);
+            try {
+                var savedTheme = localStorage.getItem("course-project-theme");
+                if (savedTheme === "light" || savedTheme === "dark") {
+                    document.documentElement.setAttribute("data-theme", savedTheme);
+                }
+            } catch (error) {
+                /* сховище недоступне — лишається системна тема */
             }
-        } catch (error) {
-            /* сховище недоступне — лишається системна тема */
-        }
-    </script>
-</head>
-<body class="page">
-    <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+        </script>
+    </head>
+    <body class="page">
+        <a class="skip-link" href="#main">Перейти до основного вмісту</a>
 
-    <header class="header">
-        <a class="header__name" href="index.html">Курсовий проєкт</a>
+        <header class="header">
+            <a class="header__name" href="index.html">Курсовий проєкт</a>
 
-        <nav class="nav" aria-label="Основна навігація">
-            <a href="index.html">Головна</a>
-            <a href="about.html" aria-current="page">Про проєкт</a>
-            <a href="activity.html">Активність</a>
-            <a href="contact.html">Зворотний зв'язок</a>
-        </nav>
+            <nav class="nav" aria-label="Основна навігація">
+                <a href="index.html">Головна</a>
+                <a href="about.html" aria-current="page">Про проєкт</a>
+                <a href="activity.html">Активність</a>
+                <a href="contact.html">Зворотний зв'язок</a>
+            </nav>
 
-        <button class="theme-toggle" type="button" data-theme-toggle hidden>
-            Тема: <span data-theme-label>як у системі</span>
-        </button>
-    </header>
+            <button class="theme-toggle" type="button" data-theme-toggle hidden>
+                Тема: <span data-theme-label>як у системі</span>
+            </button>
+        </header>
 
-    <div class="layout">
-        <main class="content" id="main">
-            <h1>Про проєкт</h1>
-            <p>
-                Предметна область проєкту поки не зафіксована: перші лабораторні
-                роботи присвячені середовищу, розмітці, доступності та розкладці,
-                тому наповнення сторінок описове. Структура закладається так, щоб
-                тему можна було додати пізніше без переписування коду.
-            </p>
+        <div class="layout">
+            <main class="content" id="main">
+                <h1>Про проєкт</h1>
+                <p>
+                    Предметна область проєкту поки не зафіксована: перші лабораторні роботи
+                    присвячені середовищу, розмітці, доступності та розкладці, тому наповнення
+                    сторінок описове. Структура закладається так, щоб тему можна було додати пізніше
+                    без переписування коду.
+                </p>
 
-            <section>
-                <h2>Що зроблено</h2>
+                <section>
+                    <h2>Що зроблено</h2>
 
-                <ul>
-                    <li>налаштовано Git, редактор коду та репозиторій на GitHub;</li>
-                    <li>закладено структуру каталогів для розмітки, стилів і звітів;</li>
-                    <li>сторінки опубліковано через GitHub Pages;</li>
-                    <li>форму зворотного зв'язку перевіряє сам браузер, без скриптів;</li>
-                    <li>розкладку сторінок побудовано на Grid і Flexbox;</li>
-                    <li>кольори й розміри винесено в окремий файл токенів;</li>
-                    <li>додано темну тему й перевірено контраст за WCAG.</li>
-                </ul>
-            </section>
+                    <ul>
+                        <li>налаштовано Git, редактор коду та репозиторій на GitHub;</li>
+                        <li>закладено структуру каталогів для розмітки, стилів і звітів;</li>
+                        <li>сторінки опубліковано через GitHub Pages;</li>
+                        <li>форму зворотного зв'язку перевіряє сам браузер, без скриптів;</li>
+                        <li>розкладку сторінок побудовано на Grid і Flexbox;</li>
+                        <li>кольори й розміри винесено в окремий файл токенів;</li>
+                        <li>додано темну тему й перевірено контраст за WCAG.</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h2>План розвитку</h2>
-                <p>Етапи, через які проєкт проходитиме протягом курсу:</p>
+                <section>
+                    <h2>План розвитку</h2>
+                    <p>Етапи, через які проєкт проходитиме протягом курсу:</p>
 
-                <ol>
-                    <li>Середовище і перша сторінка <span class="status">виконано</span></li>
-                    <li>Семантика і форми <span class="status">виконано</span></li>
-                    <li>Flexbox і Grid <span class="status">виконано</span></li>
-                    <li>Адаптивність і дизайн-система <span class="status">виконано</span></li>
-                    <li>Інтерактивність на JavaScript</li>
-                    <li>Робота з даними</li>
-                    <li>Збірка та оптимізація</li>
-                </ol>
-            </section>
+                    <ol>
+                        <li>Середовище і перша сторінка <span class="status">виконано</span></li>
+                        <li>Семантика і форми <span class="status">виконано</span></li>
+                        <li>Flexbox і Grid <span class="status">виконано</span></li>
+                        <li>Адаптивність і дизайн-система <span class="status">виконано</span></li>
+                        <li>Інтерактивність на JavaScript</li>
+                        <li>Робота з даними</li>
+                        <li>Збірка та оптимізація</li>
+                    </ol>
+                </section>
 
-            <section>
-                <h2>Як побудовано розкладку</h2>
+                <section>
+                    <h2>Як побудовано розкладку</h2>
 
-                <ul class="cards">
-                    <li class="card">
-                        <h3 class="card__title">Каркас сторінки</h3>
-                        <p class="card__text">
-                            Grid у три рядки: шапка, вміст, підвал. Середній рядок
-                            розтягується, тому підвал притиснутий донизу навіть на
-                            короткій сторінці.
-                        </p>
-                    </li>
+                    <ul class="cards">
+                        <li class="card">
+                            <h3 class="card__title">Каркас сторінки</h3>
+                            <p class="card__text">
+                                Grid у три рядки: шапка, вміст, підвал. Середній рядок розтягується,
+                                тому підвал притиснутий донизу навіть на короткій сторінці.
+                            </p>
+                        </li>
 
-                    <li class="card">
-                        <h3 class="card__title">Вміст і бічна панель</h3>
-                        <p class="card__text">
-                            Grid у дві колонки. На вузькому екрані колонки стають одна
-                            під одною, бічна панель іде після основного тексту.
-                        </p>
-                    </li>
+                        <li class="card">
+                            <h3 class="card__title">Вміст і бічна панель</h3>
+                            <p class="card__text">
+                                Grid у дві колонки. На вузькому екрані колонки стають одна під
+                                одною, бічна панель іде після основного тексту.
+                            </p>
+                        </li>
 
-                    <li class="card">
-                        <h3 class="card__title">Сітка карток</h3>
-                        <p class="card__text">
-                            Кількість колонок браузер добирає сам під ширину екрана —
-                            окремі точки зламу для цього не потрібні.
-                        </p>
-                    </li>
+                        <li class="card">
+                            <h3 class="card__title">Сітка карток</h3>
+                            <p class="card__text">
+                                Кількість колонок браузер добирає сам під ширину екрана — окремі
+                                точки зламу для цього не потрібні.
+                            </p>
+                        </li>
 
-                    <li class="card">
-                        <h3 class="card__title">Три класи пристроїв</h3>
-                        <p class="card__text">
-                            Телефон, планшет і десктоп. Межі між ними — 600 і 1024
-                            пікселі, контрольні ширини для перевірки — 360, 768
-                            і 1280.
-                        </p>
-                    </li>
+                        <li class="card">
+                            <h3 class="card__title">Три класи пристроїв</h3>
+                            <p class="card__text">
+                                Телефон, планшет і десктоп. Межі між ними — 600 і 1024 пікселі,
+                                контрольні ширини для перевірки — 360, 768 і 1280.
+                            </p>
+                        </li>
 
-                    <li class="card">
-                        <h3 class="card__title">Токени й теми</h3>
-                        <p class="card__text">
-                            Усі кольори та розміри оголошені змінними в одному файлі.
-                            Темна тема перевизначає лише кольори, решта значень
-                            спільна для обох тем.
-                        </p>
-                    </li>
+                        <li class="card">
+                            <h3 class="card__title">Токени й теми</h3>
+                            <p class="card__text">
+                                Усі кольори та розміри оголошені змінними в одному файлі. Темна тема
+                                перевизначає лише кольори, решта значень спільна для обох тем.
+                            </p>
+                        </li>
 
-                    <li class="card">
-                        <h3 class="card__title">Вирівнювання</h3>
-                        <p class="card__text">
-                            Flexbox відповідає за шапку, ряд тегів і внутрішню будову
-                            картки: посилання притиснуте до низу незалежно від довжини
-                            тексту.
-                        </p>
-                    </li>
-                </ul>
-            </section>
+                        <li class="card">
+                            <h3 class="card__title">Вирівнювання</h3>
+                            <p class="card__text">
+                                Flexbox відповідає за шапку, ряд тегів і внутрішню будову картки:
+                                посилання притиснуте до низу незалежно від довжини тексту.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
 
-            <section>
-                <h2>Технології</h2>
+                <section>
+                    <h2>Технології</h2>
 
-                <ul class="tags">
-                    <li class="tags__item">HTML5</li>
-                    <li class="tags__item">CSS Grid</li>
-                    <li class="tags__item">Flexbox</li>
-                    <li class="tags__item">CSS Custom Properties</li>
-                    <li class="tags__item">Git та GitHub</li>
-                    <li class="tags__item">GitHub Pages</li>
-                    <li class="tags__item">Visual Studio Code</li>
-                </ul>
-            </section>
-        </main>
+                    <ul class="tags">
+                        <li class="tags__item">HTML5</li>
+                        <li class="tags__item">CSS Grid</li>
+                        <li class="tags__item">Flexbox</li>
+                        <li class="tags__item">CSS Custom Properties</li>
+                        <li class="tags__item">Git та GitHub</li>
+                        <li class="tags__item">GitHub Pages</li>
+                        <li class="tags__item">Visual Studio Code</li>
+                    </ul>
+                </section>
+            </main>
 
-        <aside class="sidebar" aria-label="Додаткова інформація">
-            <section class="panel">
-                <h2 class="panel__title">Стан робіт</h2>
+            <aside class="sidebar" aria-label="Додаткова інформація">
+                <section class="panel">
+                    <h2 class="panel__title">Стан робіт</h2>
 
-                <ul class="panel__list">
-                    <li>Середовище і перша сторінка <span class="status">виконано</span></li>
-                    <li>Семантика і форми <span class="status">виконано</span></li>
-                    <li>Flexbox і Grid <span class="status">виконано</span></li>
-                    <li>Адаптивність і дизайн-система <span class="status">виконано</span></li>
-                    <li>Інтерактивність на JavaScript</li>
-                </ul>
-            </section>
+                    <ul class="panel__list">
+                        <li>Середовище і перша сторінка <span class="status">виконано</span></li>
+                        <li>Семантика і форми <span class="status">виконано</span></li>
+                        <li>Flexbox і Grid <span class="status">виконано</span></li>
+                        <li>Адаптивність і дизайн-система <span class="status">виконано</span></li>
+                        <li>Інтерактивність на JavaScript</li>
+                    </ul>
+                </section>
 
-            <section class="panel">
-                <h2 class="panel__title">Посилання</h2>
+                <section class="panel">
+                    <h2 class="panel__title">Посилання</h2>
 
-                <ul class="panel__list">
-                    <li><a href="https://github.com/dreyliky/course-project">Репозиторій на GitHub</a></li>
-                    <li><a href="index.html">Головна</a></li>
-                    <li><a href="contact.html">Зворотний зв'язок</a></li>
-                </ul>
-            </section>
-        </aside>
-    </div>
+                    <ul class="panel__list">
+                        <li>
+                            <a href="https://github.com/dreyliky/course-project"
+                                >Репозиторій на GitHub</a
+                            >
+                        </li>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="contact.html">Зворотний зв'язок</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
 
-    <footer class="footer">
-        <p>Навчальний проєкт, 2026</p>
-    </footer>
-    <script type="module" src="/src/scripts/main.ts"></script>
-</body>
+        <footer class="footer">
+            <p>Навчальний проєкт, 2026</p>
+        </footer>
+        <script type="module" src="/src/scripts/main.ts"></script>
+    </body>
 </html>

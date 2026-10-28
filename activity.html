@@ -1,135 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Історія змін курсового проєкту: останні коміти репозиторію з фільтром за типом зміни.">
-    <title>Активність — Курсовий проєкт</title>
-    <link rel="stylesheet" href="/src/styles/tokens.css">
-    <link rel="stylesheet" href="/src/styles/style.css">
-    <script>
-        /* Мінімальний інлайн до першого малювання: модулі виконуються після
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Історія змін курсового проєкту: останні коміти репозиторію з фільтром за типом зміни."
+        />
+        <title>Активність — Курсовий проєкт</title>
+        <link rel="stylesheet" href="/src/styles/tokens.css" />
+        <link rel="stylesheet" href="/src/styles/style.css" />
+        <script>
+            /* Мінімальний інлайн до першого малювання: модулі виконуються після
            розбору документа, і сторінка встигла б блимнути світлою темою.
            Повну логіку перемикача містить src/scripts/theme.ts. */
-        try {
-            var savedTheme = localStorage.getItem('course-project-theme');
-            if (savedTheme === 'light' || savedTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', savedTheme);
+            try {
+                var savedTheme = localStorage.getItem("course-project-theme");
+                if (savedTheme === "light" || savedTheme === "dark") {
+                    document.documentElement.setAttribute("data-theme", savedTheme);
+                }
+            } catch (error) {
+                /* сховище недоступне — лишається системна тема */
             }
-        } catch (error) {
-            /* сховище недоступне — лишається системна тема */
-        }
-    </script>
-</head>
-<body class="page">
-    <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+        </script>
+    </head>
+    <body class="page">
+        <a class="skip-link" href="#main">Перейти до основного вмісту</a>
 
-    <header class="header">
-        <a class="header__name" href="index.html">Курсовий проєкт</a>
+        <header class="header">
+            <a class="header__name" href="index.html">Курсовий проєкт</a>
 
-        <nav class="nav" aria-label="Основна навігація">
-            <a href="index.html">Головна</a>
-            <a href="about.html">Про проєкт</a>
-            <a href="activity.html" aria-current="page">Активність</a>
-            <a href="contact.html">Зворотний зв'язок</a>
-        </nav>
+            <nav class="nav" aria-label="Основна навігація">
+                <a href="index.html">Головна</a>
+                <a href="about.html">Про проєкт</a>
+                <a href="activity.html" aria-current="page">Активність</a>
+                <a href="contact.html">Зворотний зв'язок</a>
+            </nav>
 
-        <button class="theme-toggle" type="button" data-theme-toggle hidden>
-            Тема: <span data-theme-label>як у системі</span>
-        </button>
-    </header>
+            <button class="theme-toggle" type="button" data-theme-toggle hidden>
+                Тема: <span data-theme-label>як у системі</span>
+            </button>
+        </header>
 
-    <div class="layout">
-        <main class="content" id="main">
-            <h1>Активність</h1>
-            <p>
-                Останні тридцять комітів репозиторію. Дані завантажуються під час
-                відкриття сторінки з публічного GitHub API, тому список завжди
-                показує поточний стан роботи.
-            </p>
-
-            <noscript>
-                <p class="notice">
-                    Список комітів будується в браузері, тому без увімкненого
-                    JavaScript він не відображається. Переглянути історію можна
-                    <a href="https://github.com/dreyliky/course-project/commits/main">безпосередньо на GitHub</a>.
+        <div class="layout">
+            <main class="content" id="main">
+                <h1>Активність</h1>
+                <p>
+                    Останні тридцять комітів репозиторію. Дані завантажуються під час відкриття
+                    сторінки з публічного GitHub API, тому список завжди показує поточний стан
+                    роботи.
                 </p>
-            </noscript>
 
-            <div class="filters" role="group" aria-label="Фільтр за типом зміни" data-filters hidden></div>
-
-            <p class="state" data-state-loading>Завантаження списку комітів…</p>
-
-            <p class="state state--error" data-state-error hidden>
-                <span data-error-text></span>
-                <button class="button" type="button" data-retry>Спробувати ще раз</button>
-            </p>
-
-            <p class="state" data-state-empty hidden>За обраним типом комітів немає.</p>
-
-            <ul class="commits" data-commit-list></ul>
-
-            <template data-commit-template>
-                <li class="commit">
-                    <span class="commit__type" data-commit-type></span>
-                    <h2 class="commit__title" data-commit-title></h2>
-                    <p class="commit__meta">
-                        <time datetime="1970-01-01" data-commit-date></time>
-                        <code data-commit-sha></code>
+                <noscript>
+                    <p class="notice">
+                        Список комітів будується в браузері, тому без увімкненого JavaScript він не
+                        відображається. Переглянути історію можна
+                        <a href="https://github.com/dreyliky/course-project/commits/main"
+                            >безпосередньо на GitHub</a
+                        >.
                     </p>
-                    <button class="commit__details" type="button" data-commit-details>Подробиці</button>
-                </li>
-            </template>
-        </main>
+                </noscript>
 
-        <aside class="sidebar" aria-label="Додаткова інформація">
-            <section class="panel">
-                <h2 class="panel__title">Звідки дані</h2>
-                <p class="panel__text">
-                    Запит іде до публічного GitHub API без авторизації. Ліміт —
-                    шістдесят запитів на годину з однієї адреси; при його
-                    перевищенні сторінка покаже відповідне повідомлення.
+                <div
+                    class="filters"
+                    role="group"
+                    aria-label="Фільтр за типом зміни"
+                    data-filters
+                    hidden
+                ></div>
+
+                <p class="state" data-state-loading>Завантаження списку комітів…</p>
+
+                <p class="state state--error" data-state-error hidden>
+                    <span data-error-text></span>
+                    <button class="button" type="button" data-retry>Спробувати ще раз</button>
                 </p>
-            </section>
 
-            <section class="panel">
-                <h2 class="panel__title">Посилання</h2>
+                <p class="state" data-state-empty hidden>За обраним типом комітів немає.</p>
 
-                <ul class="panel__list">
-                    <li><a href="https://github.com/dreyliky/course-project">Репозиторій на GitHub</a></li>
-                    <li><a href="index.html">Головна</a></li>
-                    <li><a href="about.html">Про проєкт</a></li>
-                </ul>
-            </section>
-        </aside>
-    </div>
+                <ul class="commits" data-commit-list></ul>
 
-    <footer class="footer">
-        <p>Навчальний проєкт, 2026</p>
-    </footer>
+                <template data-commit-template>
+                    <li class="commit">
+                        <span class="commit__type" data-commit-type></span>
+                        <h2 class="commit__title" data-commit-title></h2>
+                        <p class="commit__meta">
+                            <time datetime="1970-01-01" data-commit-date></time>
+                            <code data-commit-sha></code>
+                        </p>
+                        <button class="commit__details" type="button" data-commit-details>
+                            Подробиці
+                        </button>
+                    </li>
+                </template>
+            </main>
 
-    <dialog class="modal" data-modal aria-labelledby="modal-title">
-        <h2 class="modal__title" id="modal-title" data-modal-title>Подробиці коміту</h2>
+            <aside class="sidebar" aria-label="Додаткова інформація">
+                <section class="panel">
+                    <h2 class="panel__title">Звідки дані</h2>
+                    <p class="panel__text">
+                        Запит іде до публічного GitHub API без авторизації. Ліміт — шістдесят
+                        запитів на годину з однієї адреси; при його перевищенні сторінка покаже
+                        відповідне повідомлення.
+                    </p>
+                </section>
 
-        <p class="modal__body" data-modal-body></p>
+                <section class="panel">
+                    <h2 class="panel__title">Посилання</h2>
 
-        <dl class="modal__facts">
-            <dt>Автор</dt>
-            <dd data-modal-author></dd>
+                    <ul class="panel__list">
+                        <li>
+                            <a href="https://github.com/dreyliky/course-project"
+                                >Репозиторій на GitHub</a
+                            >
+                        </li>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="about.html">Про проєкт</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
 
-            <dt>Дата</dt>
-            <dd><time datetime="1970-01-01" data-modal-date></time></dd>
+        <footer class="footer">
+            <p>Навчальний проєкт, 2026</p>
+        </footer>
 
-            <dt>Хеш</dt>
-            <dd><code data-modal-sha></code></dd>
-        </dl>
+        <dialog class="modal" data-modal aria-labelledby="modal-title">
+            <h2 class="modal__title" id="modal-title" data-modal-title>Подробиці коміту</h2>
 
-        <p class="modal__actions">
-            <a class="modal__link" data-modal-link href="#">Відкрити на GitHub</a>
-            <button class="button" type="button" data-modal-close>Закрити</button>
-        </p>
-    </dialog>
+            <p class="modal__body" data-modal-body></p>
 
-    <script type="module" src="/src/scripts/main.ts"></script>
-</body>
+            <dl class="modal__facts">
+                <dt>Автор</dt>
+                <dd data-modal-author></dd>
+
+                <dt>Дата</dt>
+                <dd><time datetime="1970-01-01" data-modal-date></time></dd>
+
+                <dt>Хеш</dt>
+                <dd><code data-modal-sha></code></dd>
+            </dl>
+
+            <p class="modal__actions">
+                <a class="modal__link" data-modal-link href="#">Відкрити на GitHub</a>
+                <button class="button" type="button" data-modal-close>Закрити</button>
+            </p>
+        </dialog>
+
+        <script type="module" src="/src/scripts/main.ts"></script>
+    </body>
 </html>
