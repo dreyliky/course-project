@@ -1,0 +1,64 @@
+name: Перевірка та публікація
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Права, потрібні саме для публікації на GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Одночасно має виконуватися лише одна публікація.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Збірка
+    runs-on: ubuntu-latest
+    steps:
+      - name: Отримати код
+        uses: actions/checkout@v4
+
+      - name: Налаштувати Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # ci замість install: ставить рівно ті версії, що в package-lock.json.
+      - name: Встановити залежності
+        run: npm ci
+
+      - name: Перевірити типи
+        run: npm run typecheck
+
+      - name: Перевірити код лінтером
+        run: npm run lint
+
+      - name: Перевірити форматування
+        run: npm run format:check
+
+      - name: Зібрати проєкт
+        run: npm run build
+
+      - name: Передати зібрані файли
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Публікація
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Опублікувати на GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
